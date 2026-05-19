@@ -1,0 +1,39 @@
+.bumpups {
+  padding: 48px 24px;
+  background: #ffffff;
+  color: #111827;
+}
+
+.bumpups__title {
+  margin: 0 auto 24px;
+  max-width: 680px;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.bumpups__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.bumpups__card {
+  padding: 24px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.bumpups__card h3 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.bumpups__card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #475569;
+}
