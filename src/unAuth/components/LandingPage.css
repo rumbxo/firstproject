@@ -6,11 +6,12 @@
   padding: 32px;
   background: linear-gradient(135deg, #4f46e5 0%, #22c55e 100%);
   color: #ffffff;
+  width: auto;
 }
 
 .landing-page__card {
   max-width: 520px;
-  width: 100%;
+  width: auto;
   padding: 40px 32px;
   background: rgba(255, 255, 255, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.22);

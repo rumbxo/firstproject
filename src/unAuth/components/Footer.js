@@ -4,7 +4,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="footer">
-      <p>Built with React • © {new Date().getFullYear()}</p>
+      <p>Built by Rumbxo • © {new Date().getFullYear()}</p>
     </footer>
   );
 };
