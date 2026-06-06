@@ -6,8 +6,9 @@ import Footer from './Footer';
 
 const FeaturesPage = () => {
   const [url, setUrl] = useState('');
-  const [videoId, setVideoId] = useState('');
-  const [timestamps, setTimestamps] = useState([]);
+  const [videoDetails, setVideoDetails] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const extractVideoId = (youtubeUrl) => {
     const patterns = [
@@ -25,25 +26,76 @@ const FeaturesPage = () => {
     return '';
   };
 
-  const generateSampleTimestamps = () => [
-    { time: '00:00', label: 'Intro and purpose of the video' },
-    { time: '01:20', label: 'Key AI timestamp features explained' },
-    { time: '03:45', label: 'Using timestamps to jump to highlights' },
-    { time: '06:10', label: 'Best practices for creators and viewers' },
-    { time: '08:30', label: 'Wrap up and next steps' }
-  ];
+  const selectBestThumbnail = (thumbnails) => {
+    return (
+      thumbnails.maxres ||
+      thumbnails.standard ||
+      thumbnails.high ||
+      thumbnails.medium ||
+      thumbnails.default ||
+      null
+    );
+  };
+
+  const fetchVideoDetails = async (youtubeId) => {
+    const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
+    if (!apiKey) {
+      throw new Error('YouTube API key is not configured.');
+    }
+
+    const endpoint = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${youtubeId}&key=${apiKey}`;
+    console.log('YouTube API request payload:', {
+      endpoint,
+      method: 'GET',
+      params: {
+        part: 'snippet',
+        id: youtubeId,
+        key: apiKey,
+      },
+    });
+    const response = await fetch(endpoint);
+    const data = await response.json();
+
+    if (!data || !data.items || data.items.length === 0) {
+      throw new Error('Video not found.');
+    }
+
+    const snippet = data.items[0].snippet;
+    const thumbnail = selectBestThumbnail(snippet.thumbnails);
+
+    return {
+      title: snippet.title,
+      channelTitle: snippet.channelTitle,
+      description: snippet.description,
+      thumbnailUrl: thumbnail?.url || '',
+      videoId: youtubeId,
+    };
+  };
 
   const handleInputChange = (e) => {
     setUrl(e.target.value);
+    setError('');
   };
 
-  const handleLoadVideo = () => {
+  const handleLoadVideo = async () => {
     const id = extractVideoId(url.trim());
-    if (id) {
-      setVideoId(id);
-      setTimestamps(generateSampleTimestamps());
-    } else {
-      alert('Please enter a valid YouTube URL or video ID');
+    if (!id) {
+      setError('Please enter a valid YouTube URL or video ID.');
+      setVideoDetails(null);
+      return;
+    }
+
+    setLoading(true);
+    setError('');
+    setVideoDetails(null);
+
+    try {
+      const details = await fetchVideoDetails(id);
+      setVideoDetails(details);
+    } catch (err) {
+      setError(err.message || 'Unable to load video details.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -61,7 +113,7 @@ const FeaturesPage = () => {
             <div className="youtube-player-card">
               <h1 className="youtube-title">AI YouTube Timestamp System</h1>
               <p className="youtube-subtitle">
-                Paste a YouTube link or video ID and load the video to preview AI-driven timestamps. Navigate faster, skip to highlights, and unlock smarter watching for long-form content.
+                Paste a YouTube link or video ID and preview the video thumbnail and title. This system fetches the best available thumbnail from YouTube and displays the video metadata right below the input.
               </p>
 
               <div className="youtube-input-group">
@@ -73,43 +125,33 @@ const FeaturesPage = () => {
                   onChange={handleInputChange}
                   onKeyPress={handleKeyPress}
                 />
-                <button
-                  className="youtube-button"
-                  onClick={handleLoadVideo}
-                >
-                  Load Video
+                <button className="youtube-button" onClick={handleLoadVideo}>
+                  Load Preview
                 </button>
               </div>
 
-              {videoId && (
-                <>
+              {loading && <div className="youtube-status">Fetching video preview…</div>}
+              {error && <div className="youtube-error">{error}</div>}
+
+              {videoDetails && (
+                <div className="youtube-preview-panel">
+                  <div className="youtube-preview-details">
+                    <h2 className="youtube-video-title">{videoDetails.title}</h2>
+                    <p className="youtube-video-channel">{videoDetails.channelTitle}</p>
+                  </div>
+
                   <div className="youtube-embed-container">
                     <iframe
                       width="100%"
                       height="500"
-                      src={`https://www.youtube.com/embed/${videoId}`}
+                      src={`https://www.youtube.com/embed/${videoDetails.videoId}`}
                       title="YouTube video player"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
-                    ></iframe>
+                    />
                   </div>
-
-                  <div className="youtube-timestamps-card">
-                    <div className="youtube-timestamps-header">
-                      <h2>AI Generated Timestamps</h2>
-                      <p>Jump directly to the important moments in the video.</p>
-                    </div>
-                    <ul className="youtube-timestamp-list">
-                      {timestamps.map((item) => (
-                        <li key={item.time} className="youtube-timestamp-item">
-                          <span className="timestamp-time">{item.time}</span>
-                          <span className="timestamp-label">{item.label}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </>
+                </div>
               )}
             </div>
           </div>
