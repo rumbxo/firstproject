@@ -1,0 +1,416 @@
+[debug] [2026-06-16T00:36:08.250Z] ----------------------------------------------------------------------
+[debug] [2026-06-16T00:36:08.251Z] Command:       /opt/homebrew/Cellar/node/26.0.0/bin/node /opt/homebrew/bin/firebase deploy --only functions --debug
+[debug] [2026-06-16T00:36:08.251Z] CLI Version:   15.20.0
+[debug] [2026-06-16T00:36:08.251Z] Platform:      darwin
+[debug] [2026-06-16T00:36:08.251Z] Node Version:  v26.0.0
+[debug] [2026-06-16T00:36:08.251Z] Time:          Mon Jun 15 2026 20:36:08 GMT-0400 (Eastern Daylight Time)
+[debug] [2026-06-16T00:36:08.251Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-16T00:36:08.552Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-16T00:36:08.553Z] > authorizing via signed-in user (ahmandedmonds@gmail.com)
+[debug] [2026-06-16T00:36:08.553Z] [iam] checking project firstproject-80786 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2026-06-16T00:36:08.553Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.553Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.554Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786:testIamPermissions [none]
+[debug] [2026-06-16T00:36:08.554Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786:testIamPermissions  x-goog-user-project=firstproject-80786
+[debug] [2026-06-16T00:36:08.554Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-06-16T00:36:08.784Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786:testIamPermissions 200
+[debug] [2026-06-16T00:36:08.784Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2026-06-16T00:36:08.784Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.784Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.784Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/firstproject-80786/serviceAccounts/firstproject-80786@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2026-06-16T00:36:08.784Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/firstproject-80786/serviceAccounts/firstproject-80786@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2026-06-16T00:36:08.887Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/firstproject-80786/serviceAccounts/firstproject-80786@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2026-06-16T00:36:08.887Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/firstproject-80786/serviceAccounts/firstproject-80786@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'firstproject-80786'...
+[info] 
+[info] i  deploying functions 
+[debug] [2026-06-16T00:36:08.888Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.888Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.888Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 [none]
+[debug] [2026-06-16T00:36:08.988Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 200
+[debug] [2026-06-16T00:36:08.988Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 {"projectNumber":"285327092198","projectId":"firstproject-80786","lifecycleState":"ACTIVE","name":"firstproject","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-05-19T00:32:40.291Z"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2026-06-16T00:36:08.989Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.989Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:08.989Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/adminSdkConfig [none]
+[debug] [2026-06-16T00:36:09.286Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/adminSdkConfig 200
+[debug] [2026-06-16T00:36:09.286Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/adminSdkConfig {"projectId":"firstproject-80786","storageBucket":"firstproject-80786.firebasestorage.app"}
+[debug] [2026-06-16T00:36:09.287Z] Customer code is not Node
+[debug] [2026-06-16T00:36:09.287Z] Validating python source
+[debug] [2026-06-16T00:36:09.287Z] Building python source
+[info] i  functions: Loading and analyzing source code for codebase default to determine what to deploy 
+[debug] [2026-06-16T00:36:09.287Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-06-16T00:36:09.291Z] Running command with virtualenv: command=., args=["\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/bin/activate\"","&&","python3.12","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2026-06-16T00:36:09.323Z] stdout: /Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions
+
+[debug] [2026-06-16T00:36:09.326Z] Running admin server with args: ["python3.12","\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions/private/serving.py\""] and env: {"FIREBASE_CONFIG":"{\"projectId\":\"firstproject-80786\",\"storageBucket\":\"firstproject-80786.firebasestorage.app\"}","GCLOUD_PROJECT":"firstproject-80786","GOOGLE_CLOUD_QUOTA_PROJECT":"firstproject-80786","ADMIN_PORT":"8081"} in /Users/ahmandedmonds/Desktop/GitHub/firstproject/functions
+[debug] [2026-06-16T00:36:09.326Z] Running command with virtualenv: command=., args=["\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/bin/activate\"","&&","python3.12","\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions/private/serving.py\""]
+[info]  * Serving Flask app 'serving'
+ * Debug mode: off
+
+[error] WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8081
+
+[error] Press CTRL+C to quit
+
+[error] 127.0.0.1 - - [15/Jun/2026 20:36:09] "GET /__/functions.yaml HTTP/1.1" 200 -
+
+[debug] [2026-06-16T00:36:09.846Z] Got response from /__/functions.yaml endpoints:
+  on_request_example:
+    availableMemoryMb: null
+    concurrency: null
+    cpu: gcf_gen1
+    entryPoint: on_request_example
+    httpsTrigger: {}
+    ingressSettings: null
+    labels: {}
+    maxInstances: 10
+    minInstances: null
+    platform: gcfv2
+    secretEnvironmentVariables: []
+    serviceAccountEmail: null
+    timeoutSeconds: null
+params: []
+requiredAPIs: []
+specVersion: v1alpha1
+
+[error] 127.0.0.1 - - [15/Jun/2026 20:36:09] "GET /__/quitquitquit HTTP/1.1" 200 -
+
+[error] /bin/sh: line 1: 20058 Terminated: 15          python3.12 "/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions/private/serving.py"
+
+[debug] [2026-06-16T00:36:09.857Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:09.857Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:09.858Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/firstproject-80786/locations/-/functions [none]
+[debug] [2026-06-16T00:36:10.413Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/firstproject-80786/locations/-/functions 200
+[debug] [2026-06-16T00:36:10.413Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/firstproject-80786/locations/-/functions {}
+[debug] [2026-06-16T00:36:10.414Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:10.414Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:10.415Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/firstproject-80786/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2026-06-16T00:36:10.967Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/firstproject-80786/locations/-/functions 200
+[debug] [2026-06-16T00:36:10.967Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/firstproject-80786/locations/-/functions {"functions":[{"name":"projects/firstproject-80786/locations/us-central1/functions/on_request_example","buildConfig":{"build":"projects/285327092198/locations/us-central1/builds/76de539a-0b8f-493a-824f-89c802948b4d","runtime":"python312","entryPoint":"on_request_example","source":{"storageSource":{"bucket":"gcf-v2-sources-285327092198-us-central1","object":"on_request_example/function-source.zip","generation":"1781570088233431"}},"environmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRepository":"projects/firstproject-80786/locations/us-central1/repositories/gcf-artifacts","sourceProvenance":{"resolvedStorageSource":{"bucket":"gcf-v2-sources-285327092198-us-central1","object":"on_request_example/function-source.zip","generation":"1781570088233431"}},"dockerRegistry":"ARTIFACT_REGISTRY","serviceAccount":"projects/firstproject-80786/serviceAccounts/285327092198-compute@developer.gserviceaccount.com","automaticUpdatePolicy":{}},"serviceConfig":{"service":"projects/firstproject-80786/locations/us-central1/services/on-request-example","timeoutSeconds":60,"environmentVariables":{"FIREBASE_CONFIG":"{\"projectId\":\"firstproject-80786\",\"storageBucket\":\"firstproject-80786.firebasestorage.app\"}","GCLOUD_PROJECT":"firstproject-80786","EVENTARC_CLOUD_EVENT_SOURCE":"projects/firstproject-80786/locations/us-central1/services/on_request_example","FUNCTION_TARGET":"on_request_example","LOG_EXECUTION_ID":"true"},"maxInstanceCount":10,"ingressSettings":"ALLOW_ALL","uri":"https://on-request-example-dozpud3tbq-uc.a.run.app","serviceAccountEmail":"285327092198-compute@developer.gserviceaccount.com","availableMemory":"256Mi","allTrafficOnLatestRevision":true,"revision":"on-request-example-00001-hez","maxInstanceRequestConcurrency":1,"availableCpu":"0.1666"},"state":"ACTIVE","updateTime":"2026-06-16T00:35:59.623459513Z","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"6fbaca6dfa0d81627687b3473524fa9dfddfe46a"},"environment":"GEN_2","url":"https://us-central1-firstproject-80786.cloudfunctions.net/on_request_example","createTime":"2026-06-16T00:32:44.526442964Z","satisfiesPzi":true}]}
+[info] i  functions: preparing functions directory for uploading... 
+[info] i  functions: packaged /Users/ahmandedmonds/Desktop/GitHub/firstproject/functions (2.18 KB) for uploading 
+[info] i  functions: ensuring required API run.googleapis.com is enabled... 
+[info] i  functions: ensuring required API eventarc.googleapis.com is enabled... 
+[info] i  functions: ensuring required API pubsub.googleapis.com is enabled... 
+[info] i  functions: ensuring required API storage.googleapis.com is enabled... 
+[info] i  functions: generating the service identity for pubsub.googleapis.com... 
+[debug] [2026-06-16T00:36:10.997Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:10.997Z] Checked if tokens are valid: true, expires at: 1781572164899
+[info] i  functions: generating the service identity for eventarc.googleapis.com... 
+[debug] [2026-06-16T00:36:10.997Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:10.997Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:10.997Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/pubsub.googleapis.com:generateServiceIdentity [none]
+[debug] [2026-06-16T00:36:10.997Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/pubsub.googleapis.com:generateServiceIdentity  x-goog-user-project=285327092198
+[debug] [2026-06-16T00:36:10.997Z] >>> [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/pubsub.googleapis.com:generateServiceIdentity {}
+[debug] [2026-06-16T00:36:10.998Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/eventarc.googleapis.com:generateServiceIdentity [none]
+[debug] [2026-06-16T00:36:10.998Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/eventarc.googleapis.com:generateServiceIdentity  x-goog-user-project=285327092198
+[debug] [2026-06-16T00:36:10.998Z] >>> [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/eventarc.googleapis.com:generateServiceIdentity {}
+[debug] [2026-06-16T00:36:11.361Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/eventarc.googleapis.com:generateServiceIdentity 200
+[debug] [2026-06-16T00:36:11.362Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/eventarc.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-285327092198@gcp-sa-eventarc.iam.gserviceaccount.com","uniqueId":"104256355690820986422"}}
+[debug] [2026-06-16T00:36:11.376Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/pubsub.googleapis.com:generateServiceIdentity 200
+[debug] [2026-06-16T00:36:11.376Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1beta1/projects/285327092198/services/pubsub.googleapis.com:generateServiceIdentity {"name":"operations/finished.DONE_OPERATION","done":true,"response":{"@type":"type.googleapis.com/google.api.serviceusage.v1beta1.ServiceIdentity","email":"service-285327092198@gcp-sa-pubsub.iam.gserviceaccount.com","uniqueId":"115413586319966348516"}}
+[debug] [2026-06-16T00:36:11.379Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:11.379Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:11.379Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 [none]
+[debug] [2026-06-16T00:36:11.483Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 200
+[debug] [2026-06-16T00:36:11.484Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 {"projectNumber":"285327092198","projectId":"firstproject-80786","lifecycleState":"ACTIVE","name":"firstproject","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-05-19T00:32:40.291Z"}
+[debug] [2026-06-16T00:36:11.484Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:11.485Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:11.485Z] >>> [apiv2][query] GET https://compute.googleapis.com/compute/v1/projects/285327092198 [none]
+[debug] [2026-06-16T00:36:11.585Z] <<< [apiv2][status] GET https://compute.googleapis.com/compute/v1/projects/285327092198 403
+[debug] [2026-06-16T00:36:11.586Z] <<< [apiv2][body] GET https://compute.googleapis.com/compute/v1/projects/285327092198 {"error":{"code":403,"message":"Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","errors":[{"message":"Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","domain":"usageLimits","reason":"accessNotConfigured","extendedHelp":"https://console.developers.google.com"}],"status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"service":"compute.googleapis.com","serviceTitle":"Compute Engine API","containerInfo":"285327092198","consumer":"projects/285327092198","activationUrl":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198"}]}]}}
+[debug] [2026-06-16T00:36:11.586Z] unable to look up default compute service account. Falling back to 285327092198-compute@developer.gserviceaccount.com. Error: {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":403,"message":"Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","errors":[{"message":"Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","domain":"usageLimits","reason":"accessNotConfigured","extendedHelp":"https://console.developers.google.com"}],"status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"service":"compute.googleapis.com","serviceTitle":"Compute Engine API","containerInfo":"285327092198","consumer":"projects/285327092198","activationUrl":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198"}]}]}},"response":{"statusCode":403}},"exit":1,"message":"Request to https://compute.googleapis.com/compute/v1/projects/285327092198 had HTTP Error: 403, Compute Engine API has not been used in project 285327092198 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=285327092198 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":403}
+[info] i  functions: Skipping the deploy of unchanged functions. 
+[info] ✔  functions[on_request_example(us-central1)] Skipped (No changes detected) 
+[debug] [2026-06-16T00:36:11.592Z] Total Function Deployment time: 0
+[debug] [2026-06-16T00:36:11.592Z] 0 Functions Deployed
+[debug] [2026-06-16T00:36:11.592Z] 0 Functions Errored
+[debug] [2026-06-16T00:36:11.592Z] 0 Function Deployments Aborted
+[debug] [2026-06-16T00:36:11.592Z] Average Function Deployment time: NaN
+[debug] [2026-06-16T00:36:11.654Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[debug] [2026-06-16T00:36:11.655Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:11.655Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:36:11.655Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1/projects/firstproject-80786/locations/us-central1/repositories/gcf-artifacts [none]
+[debug] [2026-06-16T00:36:11.943Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1/projects/firstproject-80786/locations/us-central1/repositories/gcf-artifacts 200
+[debug] [2026-06-16T00:36:11.944Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1/projects/firstproject-80786/locations/us-central1/repositories/gcf-artifacts {"name":"projects/firstproject-80786/locations/us-central1/repositories/gcf-artifacts","format":"DOCKER","description":"This repository is created and used by Cloud Functions for storing function docker images.","labels":{"goog-managed-by":"cloudfunctions"},"createTime":"2026-06-16T00:32:53.671025Z","updateTime":"2026-06-16T00:35:38.510298Z","mode":"STANDARD_REPOSITORY","cleanupPolicies":{"firebase-functions-cleanup":{"id":"firebase-functions-cleanup","action":"DELETE","condition":{"tagState":"ANY","olderThan":"2592000s"}}},"sizeBytes":"29726832","vulnerabilityScanningConfig":{"lastEnableTime":"2026-06-16T00:32:44.735192791Z","enablementState":"SCANNING_DISABLED","enablementStateReason":"API containerscanning.googleapis.com is not enabled."},"satisfiesPzi":true,"registryUri":"us-central1-docker.pkg.dev/firstproject-80786/gcf-artifacts"}
+[info] 
+[info] ✔  Deploy complete! 
+[info] 
+[info] Project Console: https://console.firebase.google.com/project/firstproject-80786/overview
+[debug] [2026-06-16T00:41:16.664Z] ----------------------------------------------------------------------
+[debug] [2026-06-16T00:41:16.666Z] Command:       /opt/homebrew/Cellar/node/26.0.0/bin/node /opt/homebrew/bin/firebase emulators:start
+[debug] [2026-06-16T00:41:16.666Z] CLI Version:   15.20.0
+[debug] [2026-06-16T00:41:16.666Z] Platform:      darwin
+[debug] [2026-06-16T00:41:16.666Z] Node Version:  v26.0.0
+[debug] [2026-06-16T00:41:16.666Z] Time:          Mon Jun 15 2026 20:41:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2026-06-16T00:41:16.666Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-06-16T00:41:17.158Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-06-16T00:41:17.158Z] > authorizing via signed-in user (ahmandedmonds@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting, extensions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting, extensions"}}
+[debug] [2026-06-16T00:41:17.160Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:17.160Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:17.160Z] >>> [apiv2][query] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 [none]
+[debug] [2026-06-16T00:41:17.472Z] <<< [apiv2][status] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 200
+[debug] [2026-06-16T00:41:17.472Z] <<< [apiv2][body] GET https://cloudresourcemanager.googleapis.com/v1/projects/firstproject-80786 {"projectNumber":"285327092198","projectId":"firstproject-80786","lifecycleState":"ACTIVE","name":"firstproject","labels":{"firebase":"enabled","firebase-core":"disabled"},"createTime":"2026-05-19T00:32:40.291Z"}
+[debug] [2026-06-16T00:41:17.704Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  hosting: Hosting Emulator unable to start on port 5000, starting on 5002 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5002 instead."}}
+[debug] [2026-06-16T00:41:17.704Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-06-16T00:41:17.704Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-06-16T00:41:17.706Z] Write emulator hub locator at /var/folders/hn/1m1tw80j5gb5n70yl9f40fbr0000gn/T/hub-firstproject-80786.json
+[debug] [2026-06-16T00:41:17.707Z] [Extensions] Started Extensions emulator, this is a noop.
+[debug] [2026-06-16T00:41:17.840Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-06-16T00:41:17.840Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-06-16T00:41:17.840Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-06-16T00:41:17.840Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, auth, firestore, database, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, auth, firestore, database, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2026-06-16T00:41:17.904Z] defaultcredentials: writing to file /Users/ahmandedmonds/.config/firebase/ahmandedmonds_gmail_com_application_default_credentials.json
+[debug] [2026-06-16T00:41:17.905Z] Setting GAC to /Users/ahmandedmonds/.config/firebase/ahmandedmonds_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/ahmandedmonds/.config/firebase/ahmandedmonds_gmail_com_application_default_credentials.json"}}
+[debug] [2026-06-16T00:41:17.905Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:17.905Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:17.905Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/adminSdkConfig [none]
+[debug] [2026-06-16T00:41:18.320Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/adminSdkConfig 200
+[debug] [2026-06-16T00:41:18.320Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/adminSdkConfig {"projectId":"firstproject-80786","storageBucket":"firstproject-80786.firebasestorage.app"}
+[debug] [2026-06-16T00:41:18.335Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:18.335Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:18.336Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/firstproject-80786/sites 
+[debug] [2026-06-16T00:41:19.139Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/firstproject-80786/sites 200
+[debug] [2026-06-16T00:41:19.139Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/firstproject-80786/sites {"sites":[{"name":"projects/firstproject-80786/sites/firstproject-80786","defaultUrl":"https://firstproject-80786.web.app","appId":"1:285327092198:web:4711cacbb8c810c2840e27","type":"DEFAULT_SITE"}]}
+[debug] [2026-06-16T00:41:19.139Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:19.139Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:19.140Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/webApps/1:285327092198:web:4711cacbb8c810c2840e27/config [none]
+[debug] [2026-06-16T00:41:19.428Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/webApps/1:285327092198:web:4711cacbb8c810c2840e27/config 200
+[debug] [2026-06-16T00:41:19.428Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786/webApps/1:285327092198:web:4711cacbb8c810c2840e27/config {"projectId":"firstproject-80786","appId":"1:285327092198:web:4711cacbb8c810c2840e27","storageBucket":"firstproject-80786.firebasestorage.app","apiKey":"AIzaSyDlOkI_NESuBvAmWgBBTGxGLm7MJ0u88_c","authDomain":"firstproject-80786.firebaseapp.com","messagingSenderId":"285327092198","measurementId":"G-4EBM8KELRZ","projectNumber":"285327092198","version":"2"}
+[debug] [2026-06-16T00:41:19.436Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:19.437Z] Checked if tokens are valid: true, expires at: 1781572164899
+[debug] [2026-06-16T00:41:19.437Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786 [none]
+[debug] [2026-06-16T00:41:19.730Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786 200
+[debug] [2026-06-16T00:41:19.731Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/firstproject-80786 {"projectId":"firstproject-80786","projectNumber":"285327092198","displayName":"firstproject","name":"projects/firstproject-80786","resources":{"hostingSite":"firstproject-80786"},"state":"ACTIVE","etag":"1_dc5bc9d0-a1d6-466e-9d3b-61b00fa62baf"}
+[info] i  hosting[firstproject-80786]: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting[firstproject-80786]: Local server: http://127.0.0.1:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5002\u001b[22m\u001b[24m"}}
+[info] i  ui: downloading ui-v1.15.0.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.15.0.zip..."}}
+[debug] [2026-06-16T00:41:19.790Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 
+[debug] [2026-06-16T00:41:19.966Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip 200
+[debug] [2026-06-16T00:41:19.966Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.15.0.zip [stream]
+[debug] [2026-06-16T00:41:20.120Z] Data is 3538469
+[debug] [2026-06-16T00:41:20.121Z] [unzip] Entry: client/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-06-16T00:41:20.121Z] [unzip] Processing entry: client/
+[debug] [2026-06-16T00:41:20.121Z] [unzip] mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/
+[debug] [2026-06-16T00:41:20.121Z] [unzip] Entry: client/favicon-16x16.png (compressed_size=293 bytes, uncompressed_size=293 bytes)
+[debug] [2026-06-16T00:41:20.121Z] [unzip] Processing entry: client/favicon-16x16.png
+[debug] [2026-06-16T00:41:20.121Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.121Z] [unzip] Writing file: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/favicon-16x16.png
+[debug] [2026-06-16T00:41:20.122Z] [unzip] Entry: client/safari-pinned-tab.svg (compressed_size=1433 bytes, uncompressed_size=2611 bytes)
+[debug] [2026-06-16T00:41:20.122Z] [unzip] Processing entry: client/safari-pinned-tab.svg
+[debug] [2026-06-16T00:41:20.122Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.122Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/safari-pinned-tab.svg
+[debug] [2026-06-16T00:41:20.124Z] [unzip] Entry: client/favicon.ico (compressed_size=2933 bytes, uncompressed_size=13294 bytes)
+[debug] [2026-06-16T00:41:20.124Z] [unzip] Processing entry: client/favicon.ico
+[debug] [2026-06-16T00:41:20.124Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.125Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/favicon.ico
+[debug] [2026-06-16T00:41:20.125Z] [unzip] Entry: client/index.html (compressed_size=1364 bytes, uncompressed_size=3071 bytes)
+[debug] [2026-06-16T00:41:20.125Z] [unzip] Processing entry: client/index.html
+[debug] [2026-06-16T00:41:20.125Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.125Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/index.html
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Entry: client/android-chrome-192x192.png (compressed_size=2684 bytes, uncompressed_size=2684 bytes)
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Processing entry: client/android-chrome-192x192.png
+[debug] [2026-06-16T00:41:20.126Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Writing file: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/android-chrome-192x192.png
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Entry: client/apple-touch-icon.png (compressed_size=2123 bytes, uncompressed_size=2152 bytes)
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Processing entry: client/apple-touch-icon.png
+[debug] [2026-06-16T00:41:20.126Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.126Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/apple-touch-icon.png
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Entry: client/android-chrome-512x512.png (compressed_size=5369 bytes, uncompressed_size=5411 bytes)
+[debug] [2026-06-16T00:41:20.126Z] [unzip] Processing entry: client/android-chrome-512x512.png
+[debug] [2026-06-16T00:41:20.126Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.126Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/android-chrome-512x512.png
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Entry: client/manifest.json (compressed_size=245 bytes, uncompressed_size=551 bytes)
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Processing entry: client/manifest.json
+[debug] [2026-06-16T00:41:20.127Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.127Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/manifest.json
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Entry: client/robots.txt (compressed_size=26 bytes, uncompressed_size=26 bytes)
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Processing entry: client/robots.txt
+[debug] [2026-06-16T00:41:20.127Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Writing file: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/robots.txt
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Entry: client/mstile-150x150.png (compressed_size=2034 bytes, uncompressed_size=2034 bytes)
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Processing entry: client/mstile-150x150.png
+[debug] [2026-06-16T00:41:20.127Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.127Z] [unzip] Writing file: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/mstile-150x150.png
+[debug] [2026-06-16T00:41:20.128Z] [unzip] Entry: client/assets/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-06-16T00:41:20.128Z] [unzip] Processing entry: client/assets/
+[debug] [2026-06-16T00:41:20.128Z] [unzip] mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/
+[debug] [2026-06-16T00:41:20.128Z] [unzip] Entry: client/assets/index-BX-A56oj.js (compressed_size=582089 bytes, uncompressed_size=2092775 bytes)
+[debug] [2026-06-16T00:41:20.128Z] [unzip] Processing entry: client/assets/index-BX-A56oj.js
+[debug] [2026-06-16T00:41:20.128Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-06-16T00:41:20.128Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-BX-A56oj.js
+[debug] [2026-06-16T00:41:20.133Z] [unzip] Entry: client/assets/index-CjB9C900.css (compressed_size=35979 bytes, uncompressed_size=298654 bytes)
+[debug] [2026-06-16T00:41:20.133Z] [unzip] Processing entry: client/assets/index-CjB9C900.css
+[debug] [2026-06-16T00:41:20.133Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-06-16T00:41:20.133Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-CjB9C900.css
+[debug] [2026-06-16T00:41:20.134Z] [unzip] Entry: client/assets/index-BX-A56oj.js.map (compressed_size=2362482 bytes, uncompressed_size=10036679 bytes)
+[debug] [2026-06-16T00:41:20.134Z] [unzip] Processing entry: client/assets/index-BX-A56oj.js.map
+[debug] [2026-06-16T00:41:20.134Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets
+[debug] [2026-06-16T00:41:20.134Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/index-BX-A56oj.js.map
+[debug] [2026-06-16T00:41:20.151Z] [unzip] Entry: client/assets/extensions/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-06-16T00:41:20.151Z] [unzip] Processing entry: client/assets/extensions/
+[debug] [2026-06-16T00:41:20.151Z] [unzip] mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions/
+[debug] [2026-06-16T00:41:20.151Z] [unzip] Entry: client/assets/extensions/default-extension.png (compressed_size=1646 bytes, uncompressed_size=1657 bytes)
+[debug] [2026-06-16T00:41:20.151Z] [unzip] Processing entry: client/assets/extensions/default-extension.png
+[debug] [2026-06-16T00:41:20.151Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions
+[debug] [2026-06-16T00:41:20.151Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/extensions/default-extension.png
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Entry: client/assets/img/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Processing entry: client/assets/img/
+[debug] [2026-06-16T00:41:20.152Z] [unzip] mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/img/
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Entry: client/assets/img/database.png (compressed_size=29449 bytes, uncompressed_size=29988 bytes)
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Processing entry: client/assets/img/database.png
+[debug] [2026-06-16T00:41:20.152Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/img
+[debug] [2026-06-16T00:41:20.152Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/img/database.png
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Entry: client/assets/provider-icons/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Processing entry: client/assets/provider-icons/
+[debug] [2026-06-16T00:41:20.152Z] [unzip] mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Entry: client/assets/provider-icons/auth_service_saml.svg (compressed_size=575 bytes, uncompressed_size=1226 bytes)
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_saml.svg
+[debug] [2026-06-16T00:41:20.152Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.152Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_saml.svg
+[debug] [2026-06-16T00:41:20.152Z] [unzip] Entry: client/assets/provider-icons/auth_service_phone.svg (compressed_size=261 bytes, uncompressed_size=414 bytes)
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_phone.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.153Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_phone.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Entry: client/assets/provider-icons/auth_service_facebook.svg (compressed_size=289 bytes, uncompressed_size=457 bytes)
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.153Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_facebook.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Entry: client/assets/provider-icons/auth_service_game_center.svg (compressed_size=991 bytes, uncompressed_size=3921 bytes)
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.153Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_game_center.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Entry: client/assets/provider-icons/auth_service_apple.svg (compressed_size=230 bytes, uncompressed_size=334 bytes)
+[debug] [2026-06-16T00:41:20.153Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_apple.svg
+[debug] [2026-06-16T00:41:20.153Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.153Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_apple.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Entry: client/assets/provider-icons/auth_service_github.svg (compressed_size=466 bytes, uncompressed_size=838 bytes)
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_github.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.154Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_github.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Entry: client/assets/provider-icons/auth_service_mslive.svg (compressed_size=203 bytes, uncompressed_size=378 bytes)
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.154Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_mslive.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Entry: client/assets/provider-icons/auth_service_yahoo.svg (compressed_size=577 bytes, uncompressed_size=1182 bytes)
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.154Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_yahoo.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Entry: client/assets/provider-icons/auth_service_twitter.svg (compressed_size=444 bytes, uncompressed_size=751 bytes)
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.154Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_twitter.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Entry: client/assets/provider-icons/auth_service_play_games.svg (compressed_size=565 bytes, uncompressed_size=1173 bytes)
+[debug] [2026-06-16T00:41:20.154Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2026-06-16T00:41:20.154Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.154Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_play_games.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Entry: client/assets/provider-icons/auth_service_email.svg (compressed_size=228 bytes, uncompressed_size=326 bytes)
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_email.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.155Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_email.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Entry: client/assets/provider-icons/auth_service_google.svg (compressed_size=409 bytes, uncompressed_size=720 bytes)
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_google.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.155Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_google.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Entry: client/assets/provider-icons/auth_service_oidc.svg (compressed_size=414 bytes, uncompressed_size=858 bytes)
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Processing entry: client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons
+[debug] [2026-06-16T00:41:20.155Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/assets/provider-icons/auth_service_oidc.svg
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Entry: client/browserconfig.xml (compressed_size=491 bytes, uncompressed_size=822 bytes)
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Processing entry: client/browserconfig.xml
+[debug] [2026-06-16T00:41:20.155Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.155Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/browserconfig.xml
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Entry: client/favicon-32x32.png (compressed_size=475 bytes, uncompressed_size=475 bytes)
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Processing entry: client/favicon-32x32.png
+[debug] [2026-06-16T00:41:20.155Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client
+[debug] [2026-06-16T00:41:20.155Z] [unzip] Writing file: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/client/favicon-32x32.png
+[debug] [2026-06-16T00:41:20.156Z] [unzip] Entry: server/ (compressed_size=0 bytes, uncompressed_size=0 bytes)
+[debug] [2026-06-16T00:41:20.156Z] [unzip] Processing entry: server/
+[debug] [2026-06-16T00:41:20.156Z] [unzip] mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/server/
+[debug] [2026-06-16T00:41:20.156Z] [unzip] Entry: server/server.mjs.map (compressed_size=217845 bytes, uncompressed_size=944978 bytes)
+[debug] [2026-06-16T00:41:20.156Z] [unzip] Processing entry: server/server.mjs.map
+[debug] [2026-06-16T00:41:20.156Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/server
+[debug] [2026-06-16T00:41:20.156Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/server/server.mjs.map
+[debug] [2026-06-16T00:41:20.157Z] [unzip] Entry: server/server.mjs (compressed_size=276407 bytes, uncompressed_size=933701 bytes)
+[debug] [2026-06-16T00:41:20.157Z] [unzip] Processing entry: server/server.mjs
+[debug] [2026-06-16T00:41:20.157Z] [unzip] else mkdir: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/server
+[debug] [2026-06-16T00:41:20.157Z] [unzip] deflating: /Users/ahmandedmonds/.cache/firebase/emulators/ui-v1.15.0/server/server.mjs
+[debug] [2026-06-16T00:41:20.159Z] [Extensions] Connecting Extensions emulator, this is a noop.
+[info] i  functions: Watching "/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions\" for Cloud Functions..."}}
+[debug] [2026-06-16T00:41:20.160Z] Customer code is not Node
+[debug] [2026-06-16T00:41:20.160Z] Validating python source
+[debug] [2026-06-16T00:41:20.160Z] Building python source
+[debug] [2026-06-16T00:41:20.161Z] Could not find functions.yaml. Must use http discovery
+[debug] [2026-06-16T00:41:20.162Z] Running command with virtualenv: command=., args=["\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/bin/activate\"","&&","python3.12","-c","\"import firebase_functions; import os; print(os.path.dirname(firebase_functions.__file__))\""]
+[debug] [2026-06-16T00:41:20.208Z] stdout: /Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions
+
+[debug] [2026-06-16T00:41:20.210Z] Running admin server with args: ["python3.12","\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions/private/serving.py\""] and env: {"GCLOUD_PROJECT":"firstproject-80786","K_REVISION":"1","PORT":"80","GOOGLE_CLOUD_QUOTA_PROJECT":"firstproject-80786","FUNCTIONS_EMULATOR":"true","TZ":"UTC","FIREBASE_DEBUG_MODE":"true","FIREBASE_DEBUG_FEATURES":"{\"skipTokenVerification\":true,\"enableCors\":true}","FIREBASE_EMULATOR_HUB":"127.0.0.1:4400","CLOUD_EVENTARC_EMULATOR_HOST":"http://127.0.0.1:9299","CLOUD_TASKS_EMULATOR_HOST":"127.0.0.1:9499","FIREBASE_CONFIG":"{\"storageBucket\":\"firstproject-80786.firebasestorage.app\",\"projectId\":\"firstproject-80786\"}","GOOGLE_APPLICATION_CREDENTIALS":"/Users/ahmandedmonds/.config/firebase/ahmandedmonds_gmail_com_application_default_credentials.json","ADMIN_PORT":"8081"} in /Users/ahmandedmonds/Desktop/GitHub/firstproject/functions
+[debug] [2026-06-16T00:41:20.210Z] Running command with virtualenv: command=., args=["\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/bin/activate\"","&&","python3.12","\"/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions/private/serving.py\""]
+[info]  * Serving Flask app 'serving'
+ * Debug mode: off
+
+[error] WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:8081
+
+[error] Press CTRL+C to quit
+
+[error] 127.0.0.1 - - [16/Jun/2026 00:41:20] "GET /__/functions.yaml HTTP/1.1" 200 -
+
+[debug] [2026-06-16T00:41:20.731Z] Got response from /__/functions.yaml endpoints:
+  on_request_example:
+    availableMemoryMb: null
+    concurrency: null
+    cpu: gcf_gen1
+    entryPoint: on_request_example
+    httpsTrigger: {}
+    ingressSettings: null
+    labels: {}
+    maxInstances: 10
+    minInstances: null
+    platform: gcfv2
+    secretEnvironmentVariables: []
+    serviceAccountEmail: null
+    timeoutSeconds: null
+params: []
+requiredAPIs: []
+specVersion: v1alpha1
+
+[error] 127.0.0.1 - - [16/Jun/2026 00:41:20] "GET /__/quitquitquit HTTP/1.1" 200 -
+
+[error] /bin/sh: line 1: 20541 Terminated: 15          python3.12 "/Users/ahmandedmonds/Desktop/GitHub/firstproject/functions/venv/lib/python3.12/site-packages/firebase_functions/private/serving.py"
+
+[info] ✔  functions: Loaded functions definitions from source: on_request_example. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: on_request_example."}}
+[info] ✔  functions[us-central1-on_request_example]: http function initialized (http://127.0.0.1:5001/firstproject-80786/us-central1/on_request_example). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/firstproject-80786/us-central1/on_request_example)."}}
+[debug] [2026-06-16T00:41:20.752Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase SQL Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────┬────────────────┬──────────────────────────────────┐
+│ Emulator   │ Host:Port      │ View in Emulator UI              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Functions  │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions  │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Hosting    │ 127.0.0.1:5002 │ n/a                              │
+├────────────┼────────────────┼──────────────────────────────────┤
+│ Extensions │ 127.0.0.1:5001 │ http://127.0.0.1:4000/extensions │
+└────────────┴────────────────┴──────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500
+┌─────────────────────────┬───────────────┬─────────────────────┐
+│ Extension Instance Name │ Extension Ref │ View in Emulator UI │
+└─────────────────────────┴───────────────┴─────────────────────┘
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
