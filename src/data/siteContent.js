@@ -19,10 +19,10 @@ export const featuredVideos = [
     accent: 'rose',
   },
   {
-    title: 'Retroville',
+    title: 'Code Geass',
     platform: 'TikTok',
     description: 'Another selected RUMBXO edit from the TikTok feed, linked directly to the post.',
-    url: 'https://www.tiktok.com/@rumbxo/video/7576362160100592927',
+    url: 'https://www.tiktok.com/@rumbxo/video/7482848275599478047',
     accent: 'lime',
   },
 ];

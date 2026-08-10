@@ -1,1 +1,1 @@
-That was cool!
+This is my personal website showcasing my TikTok and Instagram page. The link is https://firstproject-80786.web.app
