@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './unAuth/components/Layout';
 import LandingPage from './unAuth/components/LandingPage';
-import FeaturesPage from './unAuth/components/FeaturesPage';
+import VideosPage from './unAuth/components/VideosPage';
+import ProjectsPage from './unAuth/components/ProjectsPage';
 import ContactPage from './unAuth/components/ContactPage';
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<LandingPage />} />
-          <Route path="features" element={<FeaturesPage />} />
+          <Route path="videos" element={<VideosPage />} />
+          <Route path="projects" element={<ProjectsPage />} />
           <Route path="contact" element={<ContactPage />} />
         </Route>
       </Routes>

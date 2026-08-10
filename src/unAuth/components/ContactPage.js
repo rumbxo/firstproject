@@ -1,27 +1,24 @@
 import React from 'react';
 import './PageSection.css';
-import Bumpups from './Bumpups';
 import Footer from './Footer';
+import { profiles } from '../../data/siteContent';
 
 const ContactPage = () => {
   return (
     <>
       <main className="page-main">
-        <div className="page-container">
-          <div className="page-card">
-            <h1 className="page-title">Contact</h1>
-            <p className="page-text">
-              Have a question or need help? Reach out and we&apos;ll get back to you as soon as possible.
-            </p>
-            <div className="contact-details">
-              <p>Email: support@rumbxo.com</p>
-              <p>Phone: +1 (555) 123-4567</p>
-              <p>Location: Remote-friendly, available worldwide.</p>
-            </div>
+        <section className="page-hero">
+          <p className="eyebrow">Contact</p>
+          <h1>Work with RUMBXO</h1>
+          <p>
+            For collabs, edits, project files, or social inquiries, reach out through the active social profiles.
+          </p>
+          <div className="button-row">
+            <a className="button button--primary" href={profiles.tiktok} target="_blank" rel="noreferrer">TikTok</a>
+            <a className="button button--ghost" href={profiles.instagram} target="_blank" rel="noreferrer">Instagram</a>
           </div>
-        </div>
+        </section>
       </main>
-      <Bumpups />
       <Footer />
     </>
   );
