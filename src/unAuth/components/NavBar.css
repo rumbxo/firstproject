@@ -14,9 +14,10 @@
 
 .navbar__brand {
   color: #f8fafc;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 2.15rem;
+  font-weight: 400;
   letter-spacing: 0;
+  line-height: 1;
   min-width: 0;
   text-decoration: none;
 }

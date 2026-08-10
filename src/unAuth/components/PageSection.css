@@ -18,7 +18,7 @@
 }
 
 .page-hero h1 {
-  font-size: clamp(2.8rem, 8vw, 6.8rem);
+  font-size: 6.4rem;
   line-height: 0.92;
   margin: 0;
 }
@@ -53,38 +53,39 @@
   text-decoration: none;
 }
 
-.video-card__poster {
+.video-card__embed {
   align-items: center;
-  aspect-ratio: 9 / 13;
   background: linear-gradient(145deg, #ff235e, #10131b 58%);
   border-radius: 8px;
   display: flex;
   justify-content: center;
+  min-height: 580px;
   overflow: hidden;
+  padding: 12px 8px;
   position: relative;
 }
 
-.video-card--rose .video-card__poster {
+.video-card--rose .video-card__embed {
   background: linear-gradient(145deg, #fb7185, #4c0519 58%);
 }
 
-.video-card--lime .video-card__poster {
+.video-card--lime .video-card__embed {
   background: linear-gradient(145deg, #e9ff5f, #1a2e05 58%);
+}
+
+.video-card__embed .tiktok-embed {
+  margin: 0 auto;
+  width: 100%;
+  z-index: 1;
 }
 
 .video-card__number {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 900;
   position: absolute;
   right: 12px;
   top: 2px;
-}
-
-.video-card__play {
-  color: #f8fafc;
-  font-size: 3rem;
-  z-index: 1;
 }
 
 .video-card__platform,
@@ -98,6 +99,7 @@
 .video-card h2,
 .download-item h2,
 .embed-note h2 {
+  font-size: 2rem;
   margin: 10px 0;
 }
 
@@ -146,5 +148,15 @@
   .download-item {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .page-hero h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-hero h1 {
+    font-size: 3.35rem;
   }
 }

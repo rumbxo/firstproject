@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
 import Footer from './Footer';
-import { featuredVideos, profiles } from '../../data/siteContent';
+import { homeHighlights, profiles } from '../../data/siteContent';
 
 const LandingPage = () => {
   return (
@@ -10,7 +10,7 @@ const LandingPage = () => {
       <main className="landing-page">
         <section className="hero">
           <div className="hero__copy">
-            <p className="eyebrow">TikTok first • Reels ready • Project files</p>
+            <p className="eyebrow">TikTok first / Reels ready / Project files</p>
             <h1>RUMBXO</h1>
             <p className="hero__lead">
               A clean home for the videos, drops, edits, and downloadable project files behind @rumbxo.
@@ -40,13 +40,13 @@ const LandingPage = () => {
           </div>
         </section>
 
-        <section className="content-strip" aria-label="Featured content">
-          {featuredVideos.map((item) => (
-            <a className={`feature-tile feature-tile--${item.accent}`} href={item.url} key={item.title}>
-              <span>{item.platform}</span>
+        <section className="content-strip" aria-label="About RUMBXO">
+          {homeHighlights.map((item) => (
+            <article className={`feature-tile feature-tile--${item.accent}`} key={item.title}>
+              <span>{item.label}</span>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
-            </a>
+            </article>
           ))}
         </section>
 
