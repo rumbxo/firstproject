@@ -8,7 +8,7 @@
 .page-hero,
 .video-grid,
 .download-list,
-.embed-note {
+.featured-videos {
   margin: 0 auto;
   max-width: 1120px;
 }
@@ -38,8 +38,7 @@
 }
 
 .video-card,
-.download-item,
-.embed-note {
+.download-item {
   background: #11131a;
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 8px;
@@ -53,39 +52,44 @@
   text-decoration: none;
 }
 
-.video-card__embed {
+.section-heading {
+  margin-bottom: 22px;
+}
+
+.section-heading h2 {
+  font-size: 4rem;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.video-card__media {
   align-items: center;
   background: linear-gradient(145deg, #ff235e, #10131b 58%);
   border-radius: 8px;
   display: flex;
   justify-content: center;
-  min-height: 580px;
+  min-height: 420px;
   overflow: hidden;
-  padding: 12px 8px;
   position: relative;
 }
 
-.video-card--rose .video-card__embed {
+.video-card--rose .video-card__media {
   background: linear-gradient(145deg, #fb7185, #4c0519 58%);
 }
 
-.video-card--lime .video-card__embed {
+.video-card--lime .video-card__media {
   background: linear-gradient(145deg, #e9ff5f, #1a2e05 58%);
 }
 
-.video-card__embed .tiktok-embed {
-  margin: 0 auto;
+.video-card__player {
+  aspect-ratio: 9 / 16;
+  background: #08090d;
+  display: block;
+  height: 100%;
+  max-height: 620px;
+  object-fit: cover;
   width: 100%;
   z-index: 1;
-}
-
-.video-card__number {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 4rem;
-  font-weight: 900;
-  position: absolute;
-  right: 12px;
-  top: 2px;
 }
 
 .video-card__platform,
@@ -97,18 +101,26 @@
 }
 
 .video-card h2,
-.download-item h2,
-.embed-note h2 {
+.download-item h2 {
   font-size: 2rem;
   margin: 10px 0;
 }
 
 .video-card p,
-.download-item p,
-.embed-note p {
+.download-item p {
   color: #bcc6d5;
   line-height: 1.65;
   margin: 0;
+}
+
+.video-card__body {
+  display: grid;
+  gap: 10px;
+}
+
+.video-card__link {
+  justify-self: start;
+  margin-top: 4px;
 }
 
 .download-list {
@@ -122,18 +134,6 @@
   gap: 20px;
   justify-content: space-between;
   padding: 24px;
-}
-
-.embed-note {
-  margin-top: 20px;
-  padding: 24px;
-}
-
-.embed-note code {
-  background: #08090d;
-  border-radius: 6px;
-  color: #e9ff5f;
-  padding: 3px 6px;
 }
 
 @media (max-width: 768px) {
@@ -152,6 +152,10 @@
 
   .page-hero h1 {
     font-size: 4.5rem;
+  }
+
+  .section-heading h2 {
+    font-size: 3rem;
   }
 }
 

@@ -1,33 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './PageSection.css';
 import Footer from './Footer';
 import { featuredVideos, profiles } from '../../data/siteContent';
 
-const getTikTokVideoId = (url) => {
-  const match = url.match(/\/video\/(\d+)/);
-  return match ? match[1] : '';
-};
-
-const reloadTikTokEmbedScript = () => {
-  const scriptId = 'tiktok-embed-script';
-  const oldScript = document.getElementById(scriptId);
-
-  if (oldScript) {
-    oldScript.remove();
-  }
-
-  const script = document.createElement('script');
-  script.id = scriptId;
-  script.src = 'https://www.tiktok.com/embed.js';
-  script.async = true;
-  document.body.appendChild(script);
-};
-
 const VideosPage = () => {
-  useEffect(() => {
-    reloadTikTokEmbedScript();
-  }, []);
-
   return (
     <>
       <main className="page-main">
@@ -43,39 +19,38 @@ const VideosPage = () => {
           </div>
         </section>
 
-        <section className="video-grid" aria-label="Featured video links">
-          {featuredVideos.map((item, index) => (
-            <article className={`video-card video-card--${item.accent}`} key={item.title}>
-              <div className="video-card__embed">
-                <span className="video-card__number">0{index + 1}</span>
-                <blockquote
-                  className="tiktok-embed"
-                  cite={item.url}
-                  data-video-id={getTikTokVideoId(item.url)}
-                  data-embed-from="oembed"
-                  style={{ maxWidth: '325px', minWidth: '280px' }}
-                >
-                  <section>
-                    <a href={item.url} target="_blank" rel="noreferrer">
-                      Watch {item.title} on TikTok
-                    </a>
-                  </section>
-                </blockquote>
-              </div>
-              <div>
-                <span className="video-card__platform">{item.platform}</span>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-              </div>
-            </article>
-          ))}
-        </section>
+        <section className="featured-videos" aria-labelledby="featured-videos-title">
+          <div className="section-heading">
+            <p className="eyebrow">Featured videos</p>
+            <h2 id="featured-videos-title">Looping previews</h2>
+          </div>
 
-        <section className="embed-note">
-          <h2>Featured post slots</h2>
-          <p>
-            These slots now point directly to the three selected @rumbxo TikTok edits.
-          </p>
+          <div className="video-grid">
+            {featuredVideos.map((item) => (
+              <article className={`video-card video-card--${item.accent}`} key={item.title}>
+                <div className="video-card__media">
+                  <video
+                    className="video-card__player"
+                    src={item.videoSrc}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    controls
+                    preload="metadata"
+                  />
+                </div>
+                <div className="video-card__body">
+                  <span className="video-card__platform">{item.platform}</span>
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
+                  <a className="button button--ghost video-card__link" href={item.url || profiles.tiktok} target="_blank" rel="noreferrer">
+                    Watch on TikTok
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
       </main>
       <Footer />
